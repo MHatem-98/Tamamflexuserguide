@@ -1,0 +1,24 @@
+/* Shared product logo treatment for the static guide. */
+.page-sidebar__head {
+    min-height: 50px;
+    background: #fff url("../images/logo/logo.png") center/108px auto no-repeat;
+    color: transparent
+}
+
+.brand-mark {
+    background: #fff url("../images/logo/logo-icon.png") center/contain no-repeat !important;
+    color: transparent !important
+}
+
+header .brand:not(:has(.brand-mark)) {
+        display: block;
+    min-width: 97px;
+    min-height: 63px;
+    background: url(../images/logo/logo.png) left center / 108px auto no-repeat;
+    font-size: 0;
+
+}
+
+header .brand:not(:has(.brand-mark)) em {
+    display: none
+}

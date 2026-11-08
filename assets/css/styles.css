@@ -1,0 +1,601 @@
+@import url("branding.css");
+
+:root {
+    --navy: #002b5c;
+    --blue: #176fc3;
+    --mint: #00a66a;
+    --ink: #16243a;
+    --muted: #60708a;
+    --line: #dce5ef;
+    --paper: #fff;
+    --mist: #f5f8fb;
+    --warm: #eff7f5
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--ink);
+    font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif
+}
+
+.skip-link {
+    position: fixed;
+    top: -4rem;
+    left: 1rem;
+    padding: .6rem 1rem;
+    background: #fff;
+    color: var(--navy);
+    z-index: 5
+}
+
+.skip-link:focus {
+    top: 1rem
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 14px max(5vw, 24px);
+    background: #fff;
+    border-bottom: 1px solid var(--line)
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    color: var(--navy);
+    font-weight: 800;
+    text-decoration: none
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, var(--navy), #0c4e87);
+    color: #fff;
+    font-size: .82rem
+}
+
+.topnav {
+    display: flex;
+    gap: 1.25rem
+}
+
+.topnav a {
+    color: var(--muted);
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none
+}
+
+.topnav a:hover {
+    color: var(--blue)
+}
+
+.menu-button {
+    display: none;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: .45rem .8rem;
+    color: var(--navy);
+    font-weight: 700
+}
+
+main {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 24px 72px
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 76px 0 56px
+}
+
+.mobile-hero { padding-bottom: 42px }
+
+.mobile-flow { display: grid; gap: 1.2rem; margin-bottom: 1.25rem }
+.mobile-flow.two-up { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+.mobile-flow.three-up { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+.mobile-flow.one-up { grid-template-columns: minmax(0, 760px) }
+.mobile-step { display: grid; grid-template-columns: minmax(160px, .62fr) 1fr; gap: 1.2rem; align-items: center; padding: 1rem; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 10px 25px #1d36520d }
+.three-up .mobile-step { display: block }
+.mobile-step img { display: block; width: 100%; max-height: 460px; margin: 0 auto; border-radius: 11px; object-fit: contain; object-position: top; background: var(--mist) }
+.three-up .mobile-step img { max-width: 255px; margin-bottom: 1rem }
+.mobile-step h3 { margin: .55rem 0 .45rem; color: var(--navy); font-size: 1.15rem }
+.mobile-step p { margin: 0; color: var(--muted) }
+.mobile-step em { color: var(--ink); font-style: normal; font-weight: 700 }
+.step-number { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #eaf8f2; color: var(--mint); font-size: .8rem; font-weight: 800 }
+.landscape-step { grid-template-columns: minmax(190px, 280px) 1fr; max-width: 760px }
+.landscape-step img { max-height: 520px }
+
+.eyebrow {
+    margin: 0 0 .65rem;
+    color: var(--mint);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.15
+}
+
+h1 {
+    max-width: 760px;
+    margin: 0;
+    color: var(--navy);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    letter-spacing: -.05em
+}
+
+.lead {
+    max-width: 700px;
+    color: var(--muted);
+    font-size: 1.15rem
+}
+
+.role-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 1.75rem
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid #c5d7e9;
+    border-radius: 9px;
+    padding: .68rem 1rem;
+    color: var(--navy);
+    font-weight: 800;
+    text-decoration: none
+}
+
+.button.primary {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: #fff
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px #002b5c1f
+}
+
+.quick-card,
+.card,
+.tip-card,
+.checklist {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 10px 25px #1d36520d
+}
+
+.quick-card {
+    padding: 1.4rem 1.6rem
+}
+
+.quick-card h2 {
+    margin-top: 0;
+    font-size: 1.05rem
+}
+
+.quick-card ol {
+    margin-bottom: 0;
+    padding-left: 1.3rem
+}
+
+.notice {
+    margin-bottom: 60px;
+    border-left: 4px solid var(--mint);
+    border-radius: 8px;
+    background: #eaf8f2;
+    padding: 1rem 1.25rem;
+    color: #225742
+}
+
+.section {
+    padding: 62px 0;
+    border-top: 1px solid var(--line)
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 2rem
+}
+
+.section-heading h2 {
+    margin: .15rem 0 .65rem;
+    color: var(--navy);
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    letter-spacing: -.035em
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--muted)
+}
+
+.grid {
+    display: grid;
+    gap: 1.1rem
+}
+
+.grid.three {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.two {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.card {
+    padding: 1.45rem
+}
+
+.card h3 {
+    margin: .7rem 0 .45rem;
+    color: var(--navy)
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted)
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: #e7f1fb;
+    color: var(--blue);
+    font-weight: 900
+}
+
+.guide-layout {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 1.3rem
+}
+
+.steps {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: steps
+}
+
+.steps li {
+    position: relative;
+    padding: 0 0 0 3.2rem;
+    counter-increment: steps
+}
+
+.steps li:before {
+    position: absolute;
+    left: 0;
+    top: .05rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    content: counter(steps);
+    font-size: .85rem;
+    font-weight: 800
+}
+
+.steps b,
+.steps span {
+    display: block
+}
+
+.steps span {
+    color: var(--muted)
+}
+
+.tip-card {
+    padding: 1.25rem 1.5rem;
+    background: var(--warm)
+}
+
+.tip-card h3 {
+    margin-top: 0;
+    color: #175d48
+}
+
+.tip-card ul {
+    margin: 0;
+    padding-left: 1.2rem
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .65rem;
+    margin-bottom: 1.25rem
+}
+
+.workflow article {
+    position: relative;
+    min-height: 205px;
+    padding: 1rem;
+    border-radius: 13px;
+    background: var(--navy);
+    color: #fff
+}
+
+.workflow article:nth-child(even) {
+    background: #0f4c83
+}
+
+.workflow span {
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--mint);
+    font-size: .78rem;
+    font-weight: 800
+}
+
+.workflow h3 {
+    font-size: 1rem
+}
+
+.workflow p {
+    margin: 0;
+    color: #d5e6f7;
+    font-size: .87rem;
+    line-height: 1.45
+}
+
+.feature-grid dl {
+    margin: 0
+}
+
+.feature-grid dt {
+    margin-top: .9rem;
+    color: var(--navy);
+    font-weight: 800
+}
+
+.feature-grid dd {
+    margin: .1rem 0;
+    color: var(--muted)
+}
+
+.checklist {
+    max-width: 780px;
+    margin-top: 1.2rem;
+    padding: 1.3rem 1.5rem
+}
+
+.checklist h3 {
+    margin-top: 0;
+    color: var(--navy)
+}
+
+.checklist label {
+    display: block;
+    margin: .65rem 0;
+    color: var(--muted)
+}
+
+.checklist input {
+    accent-color: var(--mint);
+    margin-right: .5rem
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .9rem
+}
+
+.timeline div {
+    border-top: 3px solid var(--mint);
+    padding-top: .85rem
+}
+
+.timeline b,
+.timeline span {
+    display: block
+}
+
+.timeline b {
+    color: var(--navy)
+}
+
+.timeline span {
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.faq {
+    padding-bottom: 0
+}
+
+.faq details {
+    margin: .7rem 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    padding: 1rem 1.2rem
+}
+
+.faq summary {
+    cursor: pointer;
+    color: var(--navy);
+    font-weight: 800
+}
+
+.faq p {
+    margin: .8rem 0 0;
+    color: var(--muted)
+}
+
+code {
+    border-radius: 4px;
+    background: #edf1f5;
+    padding: .1rem .3rem
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 28px max(5vw, 24px);
+    border-top: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: .9rem
+}
+
+footer a {
+    color: var(--blue);
+    font-weight: 800;
+    text-decoration: none
+}
+
+@media(max-width:800px) {
+
+    .hero,
+    .guide-layout {
+        grid-template-columns: 1fr
+    }
+
+    .hero {
+        gap: 1.5rem;
+        padding: 52px 0 40px
+    }
+
+    .grid.three,
+    .workflow,
+    .timeline,
+    .mobile-flow.three-up {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .topnav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 24px 16px;
+        background: #fff;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .topnav.open {
+        display: flex
+    }
+
+    .topnav a {
+        padding: .5rem 0
+    }
+
+    .menu-button {
+        display: block
+    }
+}
+
+@media(max-width:540px) {
+    main {
+        padding: 0 18px 48px
+    }
+
+    .grid.two,
+    .grid.three,
+    .workflow,
+    .timeline,
+    .mobile-flow.two-up,
+    .mobile-flow.three-up {
+        grid-template-columns: 1fr
+    }
+
+    .mobile-step,
+    .landscape-step {
+        grid-template-columns: 125px 1fr
+    }
+
+    .mobile-step img {
+        max-height: 340px
+    }
+
+    .three-up .mobile-step {
+        display: grid
+    }
+
+    .three-up .mobile-step img {
+        max-width: none;
+        margin: 0
+    }
+
+    .section {
+        padding: 46px 0
+    }
+
+    .role-picker {
+        flex-direction: column
+    }
+
+    .button {
+        text-align: center
+    }
+
+    .topbar {
+        padding: 12px 18px
+    }
+
+    footer {
+        padding: 22px 18px;
+        flex-direction: column
+    }
+}
